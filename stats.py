@@ -6,3 +6,12 @@ def count_words(text):
     word_count = len(words)
     
     return word_count
+
+def count_characters(text):
+    # Convert the text to Lowercase
+    text = text.lower()
+    
+    # Count the number of characters
+    char_count = len(text)
+    
+    return char_count
