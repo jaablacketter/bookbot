@@ -11,7 +11,7 @@ def main():
     from stats import count_words
     from stats import count_characters
     from stats import count_characters_frequency
-    
+    from stats import sort_character_frequency
     
     # Define the path to the book file
     file_path = 'books/frankenstein.txt'
@@ -34,4 +34,20 @@ def main():
     #print character dictionary
     char_count_dict = count_characters_frequency(file_contents) 
     print(f"{char_count_dict} characters found in the document")
+
+    #print the sorted character frequency
+   # sorted_characters = sort_character_frequency(char_count_dict)
+   # print(f"{sorted_characters} characters found in the document")
+    print("============ BOOKBOT ============") 
+    print("Analyzing book found at books/frankenstein.txt...")
+    print("----------- Word Count ----------")
+    print(f"Found {word_count} total words")
+    print("--------- Character Count -------")
+    sorted_characters = sort_character_frequency(char_count_dict)
+    for item in sorted_characters:
+        char = item["char"]
+        num = item["num"]   
+        if char.isalpha():
+            print(f"{char}: {num}")
+    print("============= END ===============")
 main()

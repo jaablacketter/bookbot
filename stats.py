@@ -32,6 +32,13 @@ def count_characters_frequency(text):
         else:
             character_count[char] = 1
     return character_count
-
+    
+def sort_character_frequency(character_count):
+    result = []
+    sorted_characters = sorted(character_count.items(), key=lambda item: item[1], reverse=True)
+    for char, count in sorted_characters:
+        result.append({"char": char, "num": count})
+    return result
+    
     
    
