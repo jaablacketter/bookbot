@@ -1,3 +1,11 @@
+import sys
+
+
+if len(sys.argv) < 2:
+    print("Usage: python3 main.py <path_to_book>")
+    sys.exit(1)
+
+
 def get_book_text(file_path):
     
     with open(file_path) as file:
@@ -14,7 +22,8 @@ def main():
     from stats import sort_character_frequency
     
     # Define the path to the book file
-    file_path = 'books/frankenstein.txt'
+    
+    file_path = sys.argv[1]
 
     # Get the text from the book file
     file_contents = get_book_text(file_path)
@@ -26,14 +35,14 @@ def main():
     char_count = count_characters(file_contents)
 
     # Print the word count
-    print(f"{word_count} words found in the document")
+   # print(f"{word_count} words found in the document")
     
     # Print the character count
-    print(f"{char_count} characters found in the document")
+   # print(f"{char_count} characters found in the document")
 
     #print character dictionary
     char_count_dict = count_characters_frequency(file_contents) 
-    print(f"{char_count_dict} characters found in the document")
+    # print(f"{char_count_dict} characters found in the document")
 
     #print the sorted character frequency
    # sorted_characters = sort_character_frequency(char_count_dict)
