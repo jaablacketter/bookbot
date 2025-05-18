@@ -10,6 +10,8 @@ def main():
    # Import the count_words function from the stats module
     from stats import count_words
     from stats import count_characters
+    from stats import count_characters_frequency
+    
     
     # Define the path to the book file
     file_path = 'books/frankenstein.txt'
@@ -29,4 +31,7 @@ def main():
     # Print the character count
     print(f"{char_count} characters found in the document")
 
+    #print character dictionary
+    char_count_dict = count_characters_frequency(file_contents) 
+    print(f"{char_count_dict} characters found in the document")
 main()

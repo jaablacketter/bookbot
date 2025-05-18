@@ -15,3 +15,23 @@ def count_characters(text):
     char_count = len(text)
     
     return char_count
+
+    # dictionary to count the number of times a character appears
+def count_characters_frequency(text): 
+
+    # Convert the text to lowercase
+    text = text.lower()    
+    
+    # Create a dictionary to store character frequencies
+    character_count = {}
+
+    # Count each indiidual charater in text
+    for char in text:
+        if char in character_count:
+            character_count[char] += 1
+        else:
+            character_count[char] = 1
+    return character_count
+
+    
+   
